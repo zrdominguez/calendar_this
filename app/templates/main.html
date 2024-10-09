@@ -7,6 +7,25 @@
 </head>
 <body>
   <h1>Calendar working</h1>
+  <form method="post" action="">
+    {{ form.csrf_token() }}
+    <p>Name {{form.name}}</p>
+    <p>Start {{form.start_date}} {{form.start_time}}</p>
+    <div>
+      {{ form.end_date.label }} {{ form.end_date }} {{form.end_time}}
+
+      {% if form.end_date.errors %}
+        <ul class="errors">
+          {% for error in form.end_date.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    <p>Description {{form.description}}</p>
+    <p>Private? {{form.private}}</p>
+    <p>{{form.submit}}</p>
+  </form>
   <table>
     <thead>
       <tr>

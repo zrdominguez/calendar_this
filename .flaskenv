@@ -1,4 +1,5 @@
 FLASK_APP=app
 FLASK_ENV=development
+FLASK_DEBUG=1
 SECRET_KEY=f9bf78b9a18ce6d46a0cd2b0b86df9da
 DB_FILE=dev.db
